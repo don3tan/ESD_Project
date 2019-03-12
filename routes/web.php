@@ -11,4 +11,7 @@
 |
 */
 
-Route::get('/customer', 'CustomersController@placeorder');
+Route::get('/customer', 'OrdersController@create');
+
+Route::get('/delivery', 'DeliveriesController@edit');
+

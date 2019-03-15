@@ -17,7 +17,8 @@ class CreateOrderItemsTable extends Migration
             $table->integer('id',true,true);
             $table->integer('order_id')->unsigned();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
-            $table->Integer('quantity');
+            $table->integer('item_id');
+            $table->integer('quantity');
             $table->timestamps();
         });
 

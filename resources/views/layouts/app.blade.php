@@ -16,9 +16,15 @@
     <body>
         <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
         <script src="{{asset('bootstrap/js/jquery.js')}}"></script>
-        @include('inc.navbar')
-        <div class='jumbotron'>
-            @yield('content')
-        </div>
+        
+        {{-- <div class='container-fluid'> --}}
+            <div class='jumbotron'>
+                @include('inc.navbar')
+                @include('inc.message')
+                <div class="row">
+                    @yield('content')
+                </div>
+            </div>
+        {{-- </div> --}}
     </body>
 </html>

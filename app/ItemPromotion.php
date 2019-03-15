@@ -12,4 +12,8 @@ class ItemPromotion extends Model
     protected $table = 'item_promotions';
 
     public $primaryKey = array('id','inventory_id');
+
+    public function inventory(){
+        return $this->belongsTo(Inventory::class,'id');
+    }
 }

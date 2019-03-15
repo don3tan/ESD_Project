@@ -12,6 +12,7 @@
 */
 
 Route::get('/customer', 'OrdersController@create');
-
-Route::get('/delivery', 'DeliveriesController@edit');
+Route::post('/customer/billing', 'OrdersController@billing');
+Route::post('/customer/billing/charge', 'OrdersController@charge');
+Route::get('/logistic', 'DeliveriesController@view');
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrdersTable extends Migration
+class CreatePromotionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql2')->create('orders', function (Blueprint $table) {
+        Schema::connection('mysql5')->create('promotions', function (Blueprint $table) {
             $table->Increments('id');
-            $table->float('total_price',8,2);
-            $table->string('address');
-            $table->string('email');
-            $table->string('payment_id');
+            $table->string('promotion_name');
+            $table->float('discount');
+            $table->string('discount_type');
             $table->string('status');
             $table->timestamps();
         });
@@ -31,6 +30,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::connection('mysql2')->dropIfExists('orders');
+        Schema::connection('mysql5')->dropIfExists('promotions');
     }
 }
